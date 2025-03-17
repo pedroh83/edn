@@ -1,0 +1,73 @@
+1- Classificador de Idade
+
+# Solicita a idade do usuário
+idade = int(input("Digite a sua idade: "))
+
+# Classifica o usuário com base na idade
+if idade < 0:
+    print("Idade inválida. Por favor, insira um número positivo.")
+elif idade <= 12:
+    print("Você é classificado como Criança.")
+elif idade <= 17:
+    print("Você é classificado como Adolescente.")
+elif idade <= 59:
+    print("Você é classificado como Adulto.")
+else:
+    print("Você é classificado como Idoso.")
+
+2- Calculadora de IMC
+
+# Solicita o peso e a altura do usuário
+peso = float(input("Digite o seu peso em kg: "))
+altura = float(input("Digite a sua altura em metros: "))
+
+# Calcula o IMC
+imc = peso / (altura ** 2)
+
+# Determina a classificação com base no IMC
+if imc < 18.5:
+    classificacao = "Abaixo do peso"
+elif imc < 25:
+    classificacao = "Peso normal"
+elif imc < 30:
+    classificacao = "Sobrepeso"
+else:
+    classificacao = "Obeso"
+
+# Exibe o resultado
+print(f"Seu IMC é {imc:.2f}. Classificação: {classificacao}.")
+
+3- Conversor de Temperatura
+
+# Solicita o peso e a altura do usuário
+peso = float(input("Digite o seu peso em kg: "))
+altura = float(input("Digite a sua altura em metros: "))
+
+# Calcula o IMC
+imc = peso / (altura ** 2)
+
+# Determina a classificação com base no IMC
+if imc < 18.5:
+    classificacao = "Abaixo do peso"
+elif imc < 25:
+    classificacao = "Peso normal"
+elif imc < 30:
+    classificacao = "Sobrepeso"
+else:
+    classificacao = "Obeso"
+
+# Exibe o resultado
+print(f"Seu IMC é {imc:.2f}. Classificação: {classificacao}.")
+
+4- Verificador de Ano Bissexto
+
+# Solicita o ano ao usuário
+ano = int(input("Digite um ano: "))
+
+# Verifica se o ano é bissexto
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    print(f"O ano {ano} é bissexto.")
+else:
+    print(f"O ano {ano} não é bissexto.")
+
+
