@@ -1,0 +1,66 @@
+import pandas as pd
+
+# Leitura do arquivo de log
+log_data = pd.read_csv('log_treinamento.csv')
+
+# Supondo que a coluna de tempo de execução se chama 'tempo_execucao'
+media_tempo = log_data['tempo_execucao'].mean()
+desvio_padrao_tempo = log_data['tempo_execucao'].std()
+
+print(f'Média do tempo de execução: {media_tempo}')
+print(f'Desvio padrão do tempo de execução: {desvio_padrao_tempo}')
+2. Escrever dados em um arquivo CSV
+import csv
+
+# Dados das pessoas
+pessoas = [
+    {'Nome': 'João', 'Idade': 30, 'Cidade': 'Salvador'},
+    {'Nome': 'Maria', 'Idade': 25, 'Cidade': 'São Paulo'},
+    {'Nome': 'Pedro', 'Idade': 35, 'Cidade': 'Rio de Janeiro'}
+]
+
+# Nome do arquivo CSV
+arquivo_csv = 'pessoas.csv'
+
+# Escrevendo no arquivo CSV
+with open(arquivo_csv, mode='w', newline='') as file:
+    writer = csv.DictWriter(file, fieldnames=['Nome', 'Idade', 'Cidade'])
+    writer.writeheader()
+    for pessoa in pessoas:
+        writer.writerow(pessoa)
+
+print(f'Dados escritos no arquivo {arquivo_csv}')
+3. Ler e exibir dados de um arquivo CSV
+import csv
+
+# Nome do arquivo CSV
+arquivo_csv = 'pessoas.csv'
+
+# Lendo o arquivo CSV
+with open(arquivo_csv, mode='r') as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(f"Nome: {row['Nome']}, Idade: {row['Idade']}, Cidade: {row['Cidade']}")
+4. Ler e escrever dados em um arquivo JSON
+import json
+
+# Dados da pessoa
+pessoa = {
+    'Nome': 'Ana',
+    'Idade': 28,
+    'Cidade': 'Belo Horizonte'
+}
+
+# Nome do arquivo JSON
+arquivo_json = 'pessoa.json'
+
+# Escrevendo no arquivo JSON
+with open(arquivo_json, 'w') as file:
+    json.dump(pessoa, file)
+
+print(f'Dados escritos no arquivo {arquivo_json}')
+
+# Lendo o arquivo JSON
+with open(arquivo_json, 'r') as file:
+    dados = json.load(file)
+    print(f"Nome: {dados['Nome']}, Idade: {dados['Idade']}, Cidade: {dados['Cidade']}")
