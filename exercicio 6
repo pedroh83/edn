@@ -1,0 +1,47 @@
+nome = input("Digite seu nome: ")
+print("Olá, " + nome + "!")
+
+idade = input("digite sua idade")  # capturadados como string
+idade = int(idade)  # converte para inteiro
+print("Voce tem", idade, "anos.")
+
+altura = "digite sua altura: "  # captura a altura como string
+altura = float(altura)  # converte para float
+print("sua altura é", altura, "metros.")
+
+numero = input("digite um numero: ")  # captura o numero como string
+numero = float(numero)  # converte para float
+dobro = numero * 2  # calcula o dobro do numero
+print("o dobro de", numero, "e", dobro)
+
+# exemplo completo de entrada de dados
+nome = input("digite seu nome: ")  # captura o nome do usuario
+idade = int(input("Digite sua idade:  "))  # captura e converte a idade
+altura = float(input("Digite sua altura em metros:  "))  # captura e converte a altura
+
+print("\nResumo das suas informacoes:")
+print("Nome:", nome)
+print("Idade:", idade, "anos")
+print("altura:", altura, "metros")
+
+""" nome = "Lucas"
+idade = 25
+print("meu nome é " + nome + "e eu tenho " +str(idade) + "anos.")"""
+
+"""nome = "Lucas"
+idade = 25
+print(f"Meu nome e {nome} e eu tenho {idade} anos.")"""
+
+"""nome = "Lucas"
+idade = 25
+print("Meu nome é {} e eu tenho{} anos.".format(nome, idade))"""
+
+"""pi = 3.14159265
+print(f"O valor de pi com duas casas decimais e {pi:.2f}")"""
+
+# Cptura o nome ea idade do usuario
+nome = input("Digite o seu nome: ")
+idade = int(input("Digite a Sua idade: "))
+
+# exibe as informações formatadas
+print(f"Ola, {nome}! Voce tem {idade} anos")
