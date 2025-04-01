@@ -1,0 +1,48 @@
+from datetime import date
+
+def calcular_gorjeta(valor_conta, porcentagem_gorjeta):
+  """Calcula a gorjeta a ser deixada em um restaurante.
+
+  Args:
+    valor_conta (float): O valor total da conta.
+    porcentagem_gorjeta (float): A porcentagem da gorjeta (ex: 15 para 15%).
+
+  Returns:
+    float: O valor da gorjeta calculada.
+  """
+
+  gorjeta = valor_conta * (porcentagem_gorjeta / 100)
+  return gorjeta
+
+
+def verificar_palindromo(palavra_ou_frase):
+  """Verifica se uma palavra ou frase é um palíndromo.
+
+  Args:
+    palavra_ou_frase (str): A palavra ou frase a ser verificada.
+
+  Returns:
+    str: "Sim" se for um palíndromo, "Não" caso contrário.
+  """
+
+  palavra_ou_frase = ''.join(char.lower() for char in palavra_ou_frase if char.isalnum())
+  if palavra_ou_frase == palavra_ou_frase[::-1]:
+    return "Sim"
+  else:
+    return "Não"
+
+
+def calcular_idade_em_dias(ano_nascimento):
+  """Calcula a idade de uma pessoa em dias, baseado no ano de nascimento.
+
+  Args:
+    ano_nascimento (int): O ano de nascimento da pessoa.
+
+  Returns:
+    int: A idade da pessoa em dias.
+  """
+
+  hoje = date.today()
+  idade_em_anos = hoje.year - ano_nascimento
+  idade_em_dias = idade_em_anos * 365  # Aproximação, sem considerar anos bissextos
+  return idade_em_dias
