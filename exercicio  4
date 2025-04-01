@@ -1,0 +1,100 @@
+
+1. Calculadora com tratamento de erro
+
+def calculadora():
+    while True:
+        try:
+            num1 = float(input("Digite o primeiro número: "))
+            num2 = float(input("Digite o segundo número: "))
+            operacao = input("Digite a operação (+, -, *, /): ")
+
+            if operacao == '+':
+                resultado = num1 + num2
+            elif operacao == '-':
+                resultado = num1 - num2
+            elif operacao == '*':
+                resultado = num1 * num2
+            elif operacao == '/':
+                if num2 == 0:
+                    raise ZeroDivisionError("Divisão por zero não é permitida.")
+                resultado = num1 / num2
+            else:
+                raise ValueError("Operação inválida.")
+
+            print(f"Resultado: {resultado}")
+            break
+
+        except ValueError as e:
+            print(f"Erro: {e}")
+        except ZeroDivisionError as e:
+            print(f"Erro: {e}")
+
+calculadora()
+
+2. Calculadora media de notas
+
+def calcular_media_notas():
+    notas = []
+    while True:
+        nota = input("Digite uma nota (0-10) ou 'fim' para calcular a média: ")
+        if nota.lower() == 'fim':
+            break
+        try:
+            nota = float(nota)
+            if 0 <= nota <= 10:
+                notas.append(nota)
+            else:
+                print("Nota inválida. Notas devem estar entre 0 e 10.")
+        except ValueError:
+            print("Entrada inválida. Digite um número ou 'fim'.")
+
+    if notas:
+        media = sum(notas) / len(notas)
+        print(f"Média da turma: {media:.2f}")
+    else:
+        print("Nenhuma nota válida foi inserida.")
+
+calcular_media_notas()
+
+3. Senha Forte
+
+import re
+
+def verificar_senha_forte():
+    while True:
+        senha = input("Digite uma senha (mínimo 8 caracteres e um número) ou 'sair' para encerrar: ")
+        if senha.lower() == 'sair':
+            break
+
+        if len(senha) >= 8 and re.search(r'\d', senha):
+            print("Senha forte!")
+            break
+        else:
+            print("Senha fraca. Tente novamente.")
+
+verificar_senha_forte()
+
+4. Calculadora pares e impares
+
+def contar_pares_impares():
+    pares = 0
+    impares = 0
+    while True:
+        numero = input("Digite um número inteiro ou 'fim' para encerrar: ")
+        if numero.lower() == 'fim':
+            break
+        try:
+            numero = int(numero)
+            if numero % 2 == 0:
+                pares += 1
+            else:
+                impares += 1
+        except ValueError:
+            print("Entrada inválida. Digite um número inteiro ou 'fim'.")
+
+    print(f"Números pares: {pares}")
+    print(f"Números ímpares: {impares}")
+
+contar_pares_impares()
+
+
